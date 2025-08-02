@@ -6,16 +6,22 @@ import Button from '../components/UI/Button';
 import { Link } from 'react-router-dom';
 
 const FAQs: React.FC = () => {
-  const [openItems, setOpenItems] = useState<number[]>([]);
+  // const [openItems, setOpenItems] = useState<number[]>([]);
+  const [openItem, setOpenItem] = useState<number | null>(null);
+
   const [searchTerm, setSearchTerm] = useState('');
 
+  // const toggleItem = (index: number) => {
+  //   setOpenItems(prev => 
+  //     prev.includes(index) 
+  //       ? prev.filter(item => item !== index)
+  //       : [...prev, index]
+  //   );
+  // };
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(item => item !== index)
-        : [...prev, index]
-    );
-  };
+  setOpenItem(prev => prev === index ? null : index);
+};
+
 
   const faqCategories = [
     {
@@ -242,13 +248,15 @@ const FAQs: React.FC = () => {
                   <div className="space-y-4">
                     {category.faqs.map((faq, faqIndex) => {
                       const globalIndex = categoryIndex * 100 + faqIndex;
-                      const isOpen = openItems.includes(globalIndex);
+                      // const isOpen = openItems.includes(globalIndex);
+                      const isOpen = openItem === globalIndex;
+
                       
                       return (
                         <Card key={faqIndex} className="overflow-hidden">
                           <button
                             onClick={() => toggleItem(globalIndex)}
-                            className="w-full px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-inset"
+                            className="w-full px-6 py-4 text-left focus:outline-none"
                           >
                             <div className="flex items-center justify-between">
                               <h3 className="text-lg font-semibold text-gray-900 dark:text-white pr-4">
