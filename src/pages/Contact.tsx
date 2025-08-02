@@ -190,25 +190,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  {/* Success Message */}
-                  {isSubmitted && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 flex items-center space-x-3"
-                    >
-                      <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                      <div>
-                        <h4 className="text-green-800 dark:text-green-200 font-semibold">
-                          Enquiry Submitted Successfully!
-                        </h4>
-                        <p className="text-green-700 dark:text-green-300 text-sm">
-                          Thank you for your enquiry! We will contact you within 2 hours with a detailed quote.
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
+                  
 
                   {/* Personal Information */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -338,11 +320,31 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
 
+                  {/* Success Message */}
+                  {isSubmitted && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 flex items-center space-x-3"
+                    >
+                      <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-green-800 dark:text-green-200 font-semibold">
+                          Enquiry Submitted Successfully!
+                        </h4>
+                        <p className="text-green-700 dark:text-green-300 text-sm">
+                          Thank you for your enquiry! We will contact you within 2 hours with a detailed quote.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+
                   <Button 
                     type="submit" 
                     size="lg" 
                     className="w-full" 
-                    icon={isSubmitting ? Loader2 : Send}
+                    // icon={isSubmitting ? Loader2 : Send}
                     disabled={isSubmitting}
                   >
                     <span className="flex items-center">
