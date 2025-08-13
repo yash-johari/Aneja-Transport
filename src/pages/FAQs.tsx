@@ -42,7 +42,7 @@ const FAQs: React.FC = () => {
         },
         {
           question: 'What payment methods do you accept?',
-          answer: 'We accept cash, bank transfers, UPI, credit/debit cards, and cheques. For corporate clients, we offer credit terms based on agreement. Payment can be made 50% advance and 50% on delivery, or full payment in advance based on your preference.'
+          answer: 'We accept cash, bank transfers, UPI, credit/debit cards, and cheques. For corporate clients, we offer credit terms based on agreement. Complete payment can be made either at the beginning of the shipment or upon delivery, as per your preference.'
         }
       ]
     },
@@ -52,7 +52,7 @@ const FAQs: React.FC = () => {
       faqs: [
         {
           question: 'Which cities and states do you serve?',
-          answer: 'We provide pan-India coverage including all major cities like Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad, Pune, and Ahmedabad. We serve all 28 states and 8 union territories. Even remote locations are accessible through our extensive network of partner transporters.'
+          answer: 'We operate in more than 100 cities across India, with an extensive network that also enables us to reach remote locations through trusted partner transporters.'
         },
         {
           question: 'Do you provide door-to-door service?',
@@ -60,7 +60,7 @@ const FAQs: React.FC = () => {
         },
         {
           question: 'How long does delivery take?',
-          answer: 'Delivery time depends on distance and service type: Same city: 4-8 hours, Within state: 1-2 days, Neighboring states: 2-4 days, Pan-India: 3-7 days. We also offer express services for urgent deliveries with guaranteed timelines.'
+          answer: 'Delivery time depends on distance and service type: Same city deliveries are completed within a few hours, within state deliveries take a short transit time, and neighboring state deliveries are scheduled promptly. We also offer express services for urgent shipments with guaranteed timelines.'
         },
         {
           question: 'Do you operate on weekends and holidays?',
@@ -74,16 +74,12 @@ const FAQs: React.FC = () => {
       icon: '🛡️',
       faqs: [
         {
-          question: 'Are my goods insured during transport?',
-          answer: 'Yes, all shipments are covered under comprehensive transit insurance at no extra cost for goods up to ₹1 lakh value. For higher value shipments, additional insurance is available at minimal charges. This covers theft, damage, accidents, and natural calamities.'
-        },
-        {
           question: 'What safety measures do you take?',
           answer: 'We ensure maximum safety through: GPS-enabled vehicles with real-time tracking, experienced and verified drivers, regular vehicle maintenance and safety checks, secure packaging and loading procedures, 24/7 customer support for emergencies, and comprehensive insurance coverage.'
         },
         {
           question: 'What happens if my goods are damaged?',
-          answer: 'In the rare event of damage, immediately notify us with photos and details. We will file an insurance claim and ensure quick settlement. Our insurance covers repair/replacement costs. We also conduct thorough investigations to prevent future incidents.'
+          answer: 'In the rare event of damage, immediately notify us with photos and details. We will ensure quick resolution and take corrective measures. We also conduct thorough investigations to prevent future incidents.'
         },
         {
           question: 'How do you handle fragile items?',
@@ -95,10 +91,6 @@ const FAQs: React.FC = () => {
       category: 'Tracking & Updates',
       icon: '📱',
       faqs: [
-        {
-          question: 'Can I track my shipment in real-time?',
-          answer: 'Yes, all our vehicles are GPS-enabled for real-time tracking. You\'ll receive a tracking link via SMS/WhatsApp once your shipment is dispatched. You can also call our customer care for live updates on your shipment status.'
-        },
         {
           question: 'How will I be notified about delivery updates?',
           answer: 'We provide regular updates via SMS, WhatsApp, and phone calls at key milestones: pickup confirmation, dispatch notification, in-transit updates, out-for-delivery alert, and delivery confirmation with recipient details.'

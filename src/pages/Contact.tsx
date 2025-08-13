@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
       icon: MapPin,
       title: 'Head Office',
       details: [
-        'Leechi Bagh ,NH24 Kasganj Qila, Bareilly',
+        'Leechi Bagh, NH24 Qila, Bareilly',
         'Uttar Pradesh - 243003',
         'India'
       ],

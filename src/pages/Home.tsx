@@ -36,8 +36,8 @@ const Home: React.FC = () => {
   const stats = [
     { icon: Clock, label: '50+ Years', value: 'Experience' },
     { icon: Truck, label: '20+ Vehicles', value: 'Fleet Size' },
-    { icon: Users, label: '10,000+', value: 'Happy Clients' },
-    { icon: MapPin, label: 'All India', value: 'Coverage' },
+    { icon: Users, label: '20,000+', value: 'Happy Clients' },
+    { icon: MapPin, label: '100+ Cities', value: 'Coverage' },
   ];
 
   const features = [

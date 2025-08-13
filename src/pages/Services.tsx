@@ -47,14 +47,14 @@ const Services: React.FC = () => {
       image: 'https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpo=1'
       // REPLACE: Use actual B2B transport photos
     },
-    {
-      icon: Zap,
-      title: 'Specialised Industrial Transport',
-      description: 'Tailored transport for heavy machinery and industrial goods requiring expert handling and compliance.',
-      features: ['Heavy Load Handling', 'Specialised Vehicles', 'Trained Staff', 'Safety & Compliance'],
-      image: 'https://images.pexels.com/photos/3735930/pexels-photo-3735930.jpeg'
-      // REPLACE: Use express delivery service photos
-    }
+    // {
+    //   icon: Zap,
+    //   title: 'Specialised Industrial Transport',
+    //   description: 'Tailored transport for heavy machinery and industrial goods requiring expert handling and compliance.',
+    //   features: ['Heavy Load Handling', 'Specialised Vehicles', 'Trained Staff', 'Safety & Compliance'],
+    //   image: 'https://images.pexels.com/photos/3735930/pexels-photo-3735930.jpeg'
+    //   // REPLACE: Use express delivery service photos
+    // }
   ];
 
   const advantages = [
@@ -81,11 +81,17 @@ const Services: React.FC = () => {
   ];
 
   const coverage = [
-    'Bareilly', 'Moradabad' ,'Delhi NCR', 'Mumbai', 'Bangalore', 'Chennai', 'Kolkata', 'Hyderabad',
-    'Pune', 'Ahmedabad', 'Jaipur', 'Lucknow', 'Kanpur',
-    'Nagpur', 'Indore', 'Bhopal', 'Visakhapatnam', 'Patna', 'Vadodara',
-    'Ghaziabad', 'Ludhiana', 'Agra', 'Faridabad', 'Meerut'
-  ];
+  'Aligarh', 'Amroha', 'Atrasi', 'Badaun', 'Bagpat', 'Bahjoi', 'Barut', 'Bijnor',
+  'Bilari', 'Bilaspur', 'Budhana', 'Bulandshar', 'Chandausi', 'Chandpur', 'Dalpatpur',
+  'Dehradun', 'Deoband', 'Dhampur', 'Dhnora', 'Dingarpur', 'Gajraula', 'Gulaothi',
+  'Haldaur', 'Hapur', 'Haridwar', 'Hasanpur', 'Joya', 'Jwalapur', 'Kanth', 'Kashipur',
+  'Kemri', 'Khatoli', 'Khurja', 'Kiratpur', 'Lakshar', 'Mawana', 'MeerGanj', 'Meerut',
+  'Milak', 'Mirapur', 'Modinagar', 'Moradabad', 'Munda Panday', 'Mussoorie',
+  'Muzaffarnagar', 'Nagina', 'Nahtaur', 'Najibabad', 'Noorpur', 'Pakwara', 'Purkajee',
+  'Rampur', 'Rishikesh', 'Roorkee', 'Saharanpur', 'Sambhal', 'Seohara', 'Shamli',
+  'Shariff Nagar', 'Siyana', 'Tanda', 'Thakurdwara'
+];
+
 
   return (
     <div className="min-h-screen">
@@ -111,7 +117,7 @@ const Services: React.FC = () => {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { number: '200+', label: 'Cities Covered' },
+              { number: '100+', label: 'Cities Covered' },
               { number: '24/7', label: 'Customer Support' },
               { number: '99.5%', label: 'On-Time Delivery' },
               { number: '100%', label: 'Insured Transport' }
@@ -256,7 +262,7 @@ const Services: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-              Pan-India <span className="text-orange-500">Coverage</span>
+              Broad City <span className="text-orange-500">Presence</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               We serve major cities and towns across India, ensuring your goods reach their destination safely

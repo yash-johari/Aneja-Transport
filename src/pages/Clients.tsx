@@ -7,9 +7,6 @@ import jkTyres from "../assets/images/jk-tyre.webp";
 import nerolac from "../assets/images/nerolac-paints.png";
 import ceat from "../assets/images/ceat-tyres.webp";
 import bridgestone from "../assets/images/bridgestone.jpg";
-import asianPaints from "../assets/images/asian-paints.jpg";
-import berger from "../assets/images/berger-paints.png";
-import mrfTyres from "../assets/images/mrf-tyres.jpg";
 
 const Clients: React.FC = () => {
   const testimonials = [
@@ -82,14 +79,12 @@ const Clients: React.FC = () => {
     { name: 'Kansas Narolac Paints', logo: nerolac },
     { name: 'CEAT Tyres', logo: ceat },
     { name: 'Bridgestone India', logo: bridgestone },
-    { name: 'Asian Paints', logo: asianPaints },
-    { name: 'Berger Paints', logo: berger },
-    { name: 'MRF Tyres', logo: mrfTyres }
+
   ];
 
   const stats = [
-    { icon: Users, number: '5,000+', label: 'Happy Customers' },
-    { icon: Building, number: '100+', label: 'Business Partners' },
+    { icon: Users, number: '20,000+', label: 'Happy Customers' },
+    { icon: Building, number: '50+', label: 'Business Partners' },
     { icon: Award, number: '50+', label: 'Years of Trust' },
     { icon: Heart, number: '99.5%', label: 'Satisfaction Rate' }
   ];
