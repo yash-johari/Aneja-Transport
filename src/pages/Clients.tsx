@@ -7,6 +7,13 @@ import jkTyres from "../assets/images/jk-tyre.webp";
 import nerolac from "../assets/images/nerolac-paints.png";
 import ceat from "../assets/images/ceat-tyres.webp";
 import bridgestone from "../assets/images/bridgestone.jpg";
+import adama from "../assets/images/adama.webp";
+import grasim from "../assets/images/grasim.jpg";
+import jaswant from "../assets/images/jaswant-rasayan.webp";
+import jswPaints from "../assets/images/jsw-paints.png";
+import metroTyres from "../assets/images/metro-tyres.jpg";
+import shreeRamFertiliers from "../assets/images/Shree-Ram-Fertilizers-&-Chemicals.png";
+import unigold from "../assets/images/unigold.png";
 
 const Clients: React.FC = () => {
   const testimonials = [
@@ -79,7 +86,13 @@ const Clients: React.FC = () => {
     { name: 'Kansas Narolac Paints', logo: nerolac },
     { name: 'CEAT Tyres', logo: ceat },
     { name: 'Bridgestone India', logo: bridgestone },
-
+    { name: 'Adama', logo: adama },
+    { name: 'Grasim', logo: grasim },
+    { name: 'Jaswant Rasayan', logo: jaswant },
+    { name: 'JSW Paints', logo: jswPaints },
+    { name: 'Metro Tyres', logo: metroTyres },
+    { name: 'Shree Ram Fertilizers & Chemicals', logo: shreeRamFertiliers },
+    { name: 'Unigold', logo: unigold }
   ];
 
   const stats = [
