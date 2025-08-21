@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Navigation, Loader2, CheckCircle } from 'lucide-react';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
+import { sendEmail } from '../services/emailService';
 
 interface FormData {
   name: string;
@@ -21,25 +22,21 @@ const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = React.useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    
-    // Handle form submission here
-    console.log('Form Data:', data);
-    
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
+const onSubmit = async (data: FormData) => {
+  setIsSubmitting(true);
+
+  try {
+    await sendEmail(data);
     setIsSubmitted(true);
     reset();
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
-  };
-
+    setTimeout(() => setIsSubmitted(false), 5000);
+  } catch (error) {
+    console.error("Email sending failed:", error);
+    alert("Something went wrong while sending your enquiry. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   const contactInfo = [
     {
       icon: MapPin,
