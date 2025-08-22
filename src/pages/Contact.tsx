@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Navigation, Loader2, CheckCircle, ChevronDown } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Loader2, CheckCircle, ChevronDown } from 'lucide-react';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
 import { sendEmail } from '../services/emailService';
