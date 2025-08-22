@@ -46,15 +46,7 @@ const Services: React.FC = () => {
       features: ['Secured Container Loads', 'Tamper-Proof Transit', 'Long-Distance Ready', 'Multiple Container Sizes'],
       image: 'https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpo=1'
       // REPLACE: Use actual B2B transport photos
-    },
-    // {
-    //   icon: Zap,
-    //   title: 'Specialised Industrial Transport',
-    //   description: 'Tailored transport for heavy machinery and industrial goods requiring expert handling and compliance.',
-    //   features: ['Heavy Load Handling', 'Specialised Vehicles', 'Trained Staff', 'Safety & Compliance'],
-    //   image: 'https://images.pexels.com/photos/3735930/pexels-photo-3735930.jpeg'
-    //   // REPLACE: Use express delivery service photos
-    // }
+    }
   ];
 
   const advantages = [

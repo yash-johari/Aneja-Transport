@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Navigation, Loader2, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Navigation, Loader2, CheckCircle, ChevronDown } from 'lucide-react';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
 import { sendEmail } from '../services/emailService';
@@ -17,26 +17,161 @@ interface FormData {
   message: string;
 }
 
+// Custom Searchable Dropdown Component
+interface SearchableSelectProps {
+  options: string[];
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+  error?: string;
+}
+
+const SearchableSelect: React.FC<SearchableSelectProps> = ({
+  options,
+  value,
+  onChange,
+  placeholder,
+  error
+}) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const [filteredOptions, setFilteredOptions] = React.useState(options);
+  const dropdownRef = React.useRef<HTMLDivElement>(null);
+
+  // Filter options based on search term
+  React.useEffect(() => {
+    if (searchTerm === '') {
+      setFilteredOptions(options);
+    } else {
+      const filtered = options.filter(option =>
+        option.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredOptions(filtered);
+    }
+  }, [searchTerm, options]);
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleOptionSelect = (option: string) => {
+    onChange(option);
+    setSearchTerm('');
+    setIsOpen(false);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    setIsOpen(true);
+  };
+
+  const handleInputClick = () => {
+    setIsOpen(true);
+    if (value) {
+      setSearchTerm('');
+    }
+  };
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      <div className="relative">
+        <input
+          type="text"
+          value={isOpen ? searchTerm : value}
+          onChange={handleInputChange}
+          onClick={handleInputClick}
+          placeholder={placeholder}
+          className={`w-full px-4 py-3 pr-10 rounded-lg border ${
+            error ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200`}
+          autoComplete="off"
+        />
+        <ChevronDown 
+          className={`absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 transition-transform duration-200 ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+        />
+      </div>
+
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+          className="absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg max-h-60 overflow-y-auto"
+        >
+          {filteredOptions.length > 0 ? (
+            filteredOptions.map((option, index) => (
+              <div
+                key={index}
+                onClick={() => handleOptionSelect(option)}
+                className="px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-gray-900 dark:text-white transition-colors duration-150"
+              >
+                {option}
+              </div>
+            ))
+          ) : (
+            <div className="px-4 py-3 text-gray-500 dark:text-gray-400">
+              No cities found matching "{searchTerm}"
+            </div>
+          )}
+        </motion.div>
+      )}
+
+      {error && (
+        <p className="text-red-500 text-sm mt-1">{error}</p>
+      )}
+    </div>
+  );
+};
+
 const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, reset, setValue, watch } = useForm<FormData>();
 
-const onSubmit = async (data: FormData) => {
-  setIsSubmitting(true);
+  // Watch form values for controlled components
+  const pickupLocation = watch('pickupLocation', '');
+  const dropLocation = watch('dropLocation', '');
 
-  try {
-    await sendEmail(data);
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
-  } catch (error) {
-    console.error("Email sending failed:", error);
-    alert("Something went wrong while sending your enquiry. Please try again.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+
+    try {
+      await sendEmail(data);
+      setIsSubmitted(true);
+      reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      alert("Something went wrong while sending your enquiry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // ✅ Coverage cities list
+  const coverage = [
+    'Aligarh', 'Amroha', 'Atrasi', 'Badaun', 'Bagpat', 'Bahjoi', 'Barut', 'Bijnor',
+    'Bilari', 'Bilaspur', 'Budhana', 'Bulandshar', 'Chandausi', 'Chandpur', 'Dalpatpur',
+    'Dehradun', 'Deoband', 'Dhampur', 'Dhnora', 'Dingarpur', 'Gajraula', 'Gulaothi',
+    'Haldaur', 'Hapur', 'Haridwar', 'Hasanpur', 'Joya', 'Jwalapur', 'Kanth', 'Kashipur',
+    'Kemri', 'Khatoli', 'Khurja', 'Kiratpur', 'Lakshar', 'Mawana', 'MeerGanj', 'Meerut',
+    'Milak', 'Mirapur', 'Modinagar', 'Moradabad', 'Munda Panday', 'Mussoorie',
+    'Muzaffarnagar', 'Nagina', 'Nahtaur', 'Najibabad', 'Noorpur', 'Pakwara', 'Purkajee',
+    'Rampur', 'Rishikesh', 'Roorkee', 'Saharanpur', 'Sambhal', 'Seohara', 'Shamli',
+    'Shariff Nagar', 'Siyana', 'Tanda', 'Thakurdwara'
+  ];
+
   const contactInfo = [
     {
       icon: MapPin,
@@ -63,9 +198,8 @@ const onSubmit = async (data: FormData) => {
       title: 'Phone Numbers',
       details: [
         '+91 9897030631 (Head Office)',
-        '+91 9286801108 (Main Office)',
-        '+91 8650638631 (Booking Office)',
-        'Available 24/7'
+        '+91 9286801108 (Qila Office)',
+        '+91 8650638631 (Nai Basti Office)',
       ],
       color: 'from-green-500 to-blue-500'
     },
@@ -81,8 +215,7 @@ const onSubmit = async (data: FormData) => {
       icon: Clock,
       title: 'Business Hours',
       details: [
-        'Mon - Sun: 9:00 AM - 1:00 AM',
-        'Emergency: 24/7 Available'
+        'Mon - Sun: 10:00 AM - 9:00 PM'
       ],
       color: 'from-red-500 to-orange-500'
     }
@@ -187,8 +320,6 @@ const onSubmit = async (data: FormData) => {
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  
-
                   {/* Personal Information */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -239,34 +370,40 @@ const onSubmit = async (data: FormData) => {
 
                   {/* Transport Details */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* ✅ Searchable Pickup Location Dropdown */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Pickup Location *
                       </label>
-                      <input
-                        type="text"
-                        {...register('pickupLocation', { required: 'Pickup location is required' })}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                        placeholder="City, State"
+                      <SearchableSelect
+                        options={coverage}
+                        value={pickupLocation}
+                        onChange={(value) => setValue('pickupLocation', value, { shouldValidate: true })}
+                        placeholder="Search and select pickup city"
+                        error={errors.pickupLocation?.message}
                       />
-                      {errors.pickupLocation && (
-                        <p className="text-red-500 text-sm mt-1">{errors.pickupLocation.message}</p>
-                      )}
+                      <input
+                        type="hidden"
+                        {...register('pickupLocation', { required: 'Pickup location is required' })}
+                      />
                     </div>
 
+                    {/* ✅ Searchable Drop Location Dropdown */}
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Drop Location *
                       </label>
-                      <input
-                        type="text"
-                        {...register('dropLocation', { required: 'Drop location is required' })}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-                        placeholder="City, State"
+                      <SearchableSelect
+                        options={coverage}
+                        value={dropLocation}
+                        onChange={(value) => setValue('dropLocation', value, { shouldValidate: true })}
+                        placeholder="Search and select drop city"
+                        error={errors.dropLocation?.message}
                       />
-                      {errors.dropLocation && (
-                        <p className="text-red-500 text-sm mt-1">{errors.dropLocation.message}</p>
-                      )}
+                      <input
+                        type="hidden"
+                        {...register('dropLocation', { required: 'Drop location is required' })}
+                      />
                     </div>
                   </div>
 
@@ -341,7 +478,6 @@ const onSubmit = async (data: FormData) => {
                     type="submit" 
                     size="lg" 
                     className="w-full" 
-                    // icon={isSubmitting ? Loader2 : Send}
                     disabled={isSubmitting}
                   >
                     <span className="flex items-center">
@@ -360,16 +496,6 @@ const onSubmit = async (data: FormData) => {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  Get in Touch
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  We're here to help with all your transport needs. Contact us through any of the following methods, 
-                  and our experienced team will respond promptly with personalized solutions.
-                </p>
-              </div>
-
               {contactInfo.map((info, index) => (
                 <Card key={index} className="p-6">
                   <div className="flex items-start space-x-4">
@@ -391,87 +517,8 @@ const onSubmit = async (data: FormData) => {
                   </div>
                 </Card>
               ))}
-
-              {/* Map Placeholder */}
-              <Card className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-gradient-to-br from-green-500 to-blue-500 p-3 rounded-xl mr-4">
-                    <Navigation className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                    Find Us
-                  </h3>
-                </div>
-                {/* <div className="bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
-                  <div className="text-center text-gray-500 dark:text-gray-400">
-                    <MapPin className="w-12 h-12 mx-auto mb-2" />
-                    <p className="font-medium">Interactive Map</p>
-                    <p className="text-sm">
-                      Google Maps integration will be added here<br />
-                      showing our Bareilly head office location
-                    </p>
-                  </div>
-                </div> */}
-                <div className="bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7557.8731678509885!2d79.39345223346201!3d28.37000242133286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a00741463aa149%3A0xf84883d7fa8f827!2sAneja%20Transport!5e0!3m2!1sen!2sin!4v1753968258775!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Aneja Transport Map"
-                  ></iframe>
-                </div>
-
-                <div className="mt-4 text-center">
-                  <a
-                    href="https://maps.app.goo.gl/rL7SprpzxMAaScvK8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-orange-500 hover:text-orange-600 font-medium"
-                  >
-                    View on Google Maps →
-                  </a>
-                </div>
-              </Card>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Response Time Promise */}
-      <section className="py-20 bg-gradient-to-r from-green-500 to-blue-500">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-white"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Quick Response Guaranteed
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              We understand that transport needs are often urgent. Our team commits to responding 
-              to all enquiries within 2 hours during business hours, with detailed quotes and solutions.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold mb-2">&lt; 2 Hours</div>
-                <div className="opacity-90">Response Time</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">24/7</div>
-                <div className="opacity-90">Emergency Support</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">Free</div>
-                <div className="opacity-90">Detailed Quotes</div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
