@@ -56,7 +56,7 @@ const Fleet: React.FC = () => {
   ];
 
   const certifications = [
-    { name: 'ISO 9001:2015', description: 'Quality Management System' },
+    { name: 'Safety First', description: 'Transport Compliance Standards' },
     { name: 'Motor Transport', description: 'Licensed Operator' },
     { name: 'Insurance Coverage', description: 'Comprehensive Protection' },
     { name: 'Environmental Compliance', description: 'Eco-friendly Operations' }

@@ -12,6 +12,8 @@ import Clients from './pages/Clients';
 import FAQs from './pages/FAQs';
 import Contact from './pages/Contact';
 import ScrollToTop from './components/UI/ScrollToTop';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
               <Route path="/clients" element={<Clients />} />
               <Route path="/faqs" element={<FAQs />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
             </Routes>
           </main>
           <Footer />

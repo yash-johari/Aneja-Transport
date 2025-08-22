@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Truck, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Truck, Phone, Mail, MapPin } from 'lucide-react';
+import justdialLogo from "../../assets/images/Justdial_Logo.svg";
 
 const Footer: React.FC = () => {
   return (
@@ -23,18 +24,8 @@ const Footer: React.FC = () => {
               From Bareilly to nationwide, we deliver your goods with care and reliability.
             </p>
             <div className="flex space-x-4">
-              {/* Replace # with actual social media links */}
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://jsdl.in/DT-99RXMCBXGCF" target="_blank">
+                <img src={justdialLogo} alt="justdial" className="w-24 h-auto opacity-100 hover:opacity-80" />
               </a>
             </div>
           </div>
@@ -62,7 +53,6 @@ const Footer: React.FC = () => {
               <span className="text-gray-400">Warehousing & Distribution</span>
               <span className="text-gray-400">Logistics & Supply Chain Management</span>
               <span className="text-gray-400">Containerised Transportation</span>
-              <span className="text-gray-400">Specialised Industrial Transport</span>
             </div>
           </div>
 
@@ -99,9 +89,9 @@ const Footer: React.FC = () => {
               <span className="ml-1">GSTIN: 09AFCPK8705M1Z2</span>
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <span>Privacy Policy</span>
-              <span>Terms of Service</span>
-              <span>ISO Certified Transport</span>
+            <span><Link to="/privacy-policy">Privacy Policy</Link></span>
+              <span><Link to="/terms-of-service">Terms of Service</Link></span>
+              {/* <span><Link to="/iso-certified-transport">ISO Certified Transport</Link></span> */}
             </div>
           </div>
         </div>

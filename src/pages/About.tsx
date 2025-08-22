@@ -5,6 +5,7 @@ import Card from '../components/UI/Card';
 import about1965 from "../assets/images/about-image.jpg";
 import anejaTransportLaunced from "../assets/images/aneja-transport-launched.png";
 import anejaDigitalShift from "../assets/images/aneja-digital-shift.png";
+import aboutAneja from "../assets/images/about-aneja.png"
 
 const About: React.FC = () => {
   const timeline = [
@@ -112,7 +113,7 @@ const About: React.FC = () => {
                 </div>
                 <div className="relative">
                   <img
-                    src="https://images.pexels.com/photos/7366257/pexels-photo-7366257.jpeg"
+                    src={aboutAneja}
                     alt="Aneja Transport Legacy"
                     className="w-full h-full object-cover rounded-lg"
                   />
