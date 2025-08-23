@@ -13,7 +13,6 @@ const Services: React.FC = () => {
       description: 'End-to-end transport for high-volume goods, ensuring fast, secure, and direct delivery across India.',
       features: ['Dedicated Truck Allocation', 'Route Optimization', 'Timely Deliveries', 'Pan-India Reach'],
       image: 'https://images.pexels.com/photos/21615979/pexels-photo-21615979.jpeg'
-      // REPLACE: Use actual B2B transport photos
     },
     {
       icon: Home,
@@ -21,7 +20,6 @@ const Services: React.FC = () => {
       description: 'Affordable and flexible transport for smaller consignments through shared cargo space and consolidated shipments.',
       features: ['Flexible Load Options', 'Consolidated Shipments', 'Optimized Costs', 'Efficient Scheduling'],
       image: 'https://images.pexels.com/photos/6169057/pexels-photo-6169057.jpeg'
-      // REPLACE: Use photos of household goods delivery
     },
     {
       icon: Zap,
@@ -29,7 +27,6 @@ const Services: React.FC = () => {
       description: 'Secure warehousing and streamlined distribution services to manage storage, inventory, and timely deliveries.',
       features: ['Short & Long-term Storage', 'Inventory Management', 'Last-Mile Delivery', 'Strategic Locations'],
       image: 'https://images.pexels.com/photos/6407565/pexels-photo-6407565.jpeg'
-      // REPLACE: Use express delivery service photos
     },
     {
       icon: Package,
@@ -37,7 +34,6 @@ const Services: React.FC = () => {
       description: 'Integrated solutions to optimize logistics operations, inventory flow, and supply chain performance.',
       features: ['End-to-End Coordination', 'Order Flow Optimization', 'Custom Planning', 'Performance Tracking'],
       image: 'https://images.pexels.com/photos/16100083/pexels-photo-16100083.jpeg'
-      // REPLACE: Use bulk/heavy cargo transport photos
     },
     {
       icon: Building,
@@ -45,7 +41,6 @@ const Services: React.FC = () => {
       description: 'Safe and organized movement of goods using sealed containers for added protection and efficiency.',
       features: ['Secured Container Loads', 'Tamper-Proof Transit', 'Long-Distance Ready', 'Multiple Container Sizes'],
       image: 'https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpo=1'
-      // REPLACE: Use actual B2B transport photos
     }
   ];
 

@@ -22,7 +22,6 @@ const Clients: React.FC = () => {
       position: 'Logistics Manager',
       company: 'Apollo Tyres',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      // REPLACE: Use actual client photos with permission
       testimonial: 'Aneja Transport has been our trusted logistics partner for over 5 years. Their reliability and professional service have helped us maintain our supply chain efficiency across multiple cities in India.',
       rating: 5,
       location: 'Delhi NCR'
@@ -30,9 +29,8 @@ const Clients: React.FC = () => {
     {
       name: 'Priya Sharma',
       position: 'Operations Head',
-      company: 'Kansas Narolac Paints',
+      company: 'Kansai Narolac Paints',
       image: 'https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      // REPLACE: Use actual client photos with permission
       testimonial: 'The third-generation family business brings a personal touch that is rare in today\'s logistics industry. They handle our bulk textile shipments with utmost care and always deliver on time.',
       rating: 5,
       location: 'Mumbai'
@@ -42,7 +40,6 @@ const Clients: React.FC = () => {
       position: 'Business Analyst',
       company: 'J.k Tyres & Cavendish',
       image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      // REPLACE: Use actual client photos with permission
       testimonial: 'When I needed to relocate my electronics inventory from Surat to Bangalore, Aneja Transport made it seamless. Their team handled fragile items with expertise and provided real-time tracking throughout.',
       rating: 5,
       location: 'Surat'
@@ -52,7 +49,6 @@ const Clients: React.FC = () => {
       position: 'Homemaker',
       company: 'Personal Customer',
       image: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      // REPLACE: Use actual client photos with permission
       testimonial: 'Moving our household from Bareilly to Pune was stressful, but Aneja Transport made it smooth. They took care of everything - packing, loading, transport, and delivery. Truly professional service!',
       rating: 5,
       location: 'Bareilly'
@@ -60,9 +56,8 @@ const Clients: React.FC = () => {
     {
       name: 'Vikram Singh',
       position: 'Supply Chain Director',
-      company: 'Berger Paints',
+      company: 'JSW Paints',
       image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      // REPLACE: Use actual client photos with permission
       testimonial: 'Their modern fleet and GPS tracking system gives us complete visibility of our shipments. The customer service team is always responsive and keeps us updated on delivery status.',
       rating: 5,
       location: 'Bangalore'
@@ -70,9 +65,8 @@ const Clients: React.FC = () => {
     {
       name: 'Meera Reddy',
       position: 'Procurement Manager',
-      company: 'MRF Tyres',
+      company: 'CEAT Tyres',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      // REPLACE: Use actual client photos with permission
       testimonial: 'What sets Aneja Transport apart is their commitment to customer satisfaction. They go beyond just transport - they provide complete logistics solutions tailored to our business needs.',
       rating: 5,
       location: 'Chennai'
@@ -80,10 +74,9 @@ const Clients: React.FC = () => {
   ];
 
   const clientLogos = [
-    // REPLACE: Use actual client company logos with permission
     { name: 'Apollo Tyres', logo: apollo },
     { name: 'J.k Tyres & Cavendish', logo: jkTyres },
-    { name: 'Kansas Narolac Paints', logo: nerolac },
+    { name: 'Kansai Narolac Paints', logo: nerolac },
     { name: 'CEAT Tyres', logo: ceat },
     { name: 'Bridgestone India', logo: bridgestone },
     { name: 'Adama', logo: adama },
@@ -303,7 +296,7 @@ const Clients: React.FC = () => {
                     "Aneja Transport isn't just our logistics partner - they're an extension of our team."
                   </p>
                   <p className="text-green-600 dark:text-green-400 text-sm mt-2">
-                    - Supply Chain Director, Berger Paints
+                    - Supply Chain Director, Nerolac Paints
                   </p>
                 </div>
               </Card>

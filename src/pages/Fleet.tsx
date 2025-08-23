@@ -13,7 +13,6 @@ const Fleet: React.FC = () => {
       description: 'Ideal for long-distance hauls with sealed protection for sensitive and high-value cargo.',
       features: ['Weatherproof', 'Tamper-Proof', 'Secure Transit', 'Long-Haul Ready'],
       image: 'https://images.pexels.com/photos/2800121/pexels-photo-2800121.jpeg',
-      // REPLACE: Use actual photos of light commercial vehicles from fleet
       count: '10+'
     },
     {
@@ -22,7 +21,6 @@ const Fleet: React.FC = () => {
       description: 'Perfect for small to medium shipments and urban deliveries.',
       features: ['GPS Tracking', 'Fuel Efficient', 'Quick Loading', 'City Access'],
       image: 'https://images.pexels.com/photos/17024742/pexels-photo-17024742.jpeg',
-      // REPLACE: Use actual photos of medium trucks from fleet
       count: '10+'
     },
     {
@@ -31,7 +29,6 @@ const Fleet: React.FC = () => {
       description: 'Equipped with real-time tracking to ensure transparency, safety, and better route management.',
       features: ['Live Tracking', 'Route Optimization', 'Increased Security', '24/7 Monitoring'],
       image: 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg',
-      // REPLACE: Use actual photos of heavy trucks from fleet
       count: '5+'
     }
   ];
@@ -51,14 +48,14 @@ const Fleet: React.FC = () => {
     },
     {
       category: 'Cargo Protection',
-      items: ['Weather Protection', 'Secure Loading Systems', 'Cargo Insurance', 'Temperature Monitoring', 'Theft Protection', 'Damage Prevention']
+      items: ['Weather Protection', 'Secure Loading Systems', 'Cargo Insurance*', 'Temperature Monitoring', 'Theft Protection', 'Damage Prevention']
     }
   ];
 
   const certifications = [
     { name: 'Safety First', description: 'Transport Compliance Standards' },
     { name: 'Motor Transport', description: 'Licensed Operator' },
-    { name: 'Insurance Coverage', description: 'Comprehensive Protection' },
+    { name: 'Insurance Coverage*', description: 'Comprehensive Protection' },
     { name: 'Environmental Compliance', description: 'Eco-friendly Operations' }
   ];
 

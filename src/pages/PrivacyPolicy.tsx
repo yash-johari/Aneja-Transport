@@ -5,7 +5,6 @@ import Card from '../components/UI/Card';
 const PrivacyPolicy: React.FC = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 dark:from-orange-900/20 dark:to-red-900/20"></div>
         
@@ -24,7 +23,6 @@ const PrivacyPolicy: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Founder Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

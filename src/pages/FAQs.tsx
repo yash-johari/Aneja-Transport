@@ -6,18 +6,10 @@ import Button from '../components/UI/Button';
 import { Link } from 'react-router-dom';
 
 const FAQs: React.FC = () => {
-  // const [openItems, setOpenItems] = useState<number[]>([]);
   const [openItem, setOpenItem] = useState<number | null>(null);
 
   const [searchTerm, setSearchTerm] = useState('');
 
-  // const toggleItem = (index: number) => {
-  //   setOpenItems(prev => 
-  //     prev.includes(index) 
-  //       ? prev.filter(item => item !== index)
-  //       : [...prev, index]
-  //   );
-  // };
   const toggleItem = (index: number) => {
   setOpenItem(prev => prev === index ? null : index);
 };
@@ -240,7 +232,6 @@ const FAQs: React.FC = () => {
                   <div className="space-y-4">
                     {category.faqs.map((faq, faqIndex) => {
                       const globalIndex = categoryIndex * 100 + faqIndex;
-                      // const isOpen = openItems.includes(globalIndex);
                       const isOpen = openItem === globalIndex;
 
                       

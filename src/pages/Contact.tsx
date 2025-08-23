@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
     }
   };
 
-  // ✅ Coverage cities list
+
   const coverage = [
     'Aligarh', 'Amroha', 'Atrasi', 'Badaun', 'Bagpat', 'Bahjoi', 'Barut', 'Bijnor',
     'Bilari', 'Bilaspur', 'Budhana', 'Bulandshar', 'Chandausi', 'Chandpur', 'Dalpatpur',

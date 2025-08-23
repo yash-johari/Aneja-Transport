@@ -13,24 +13,19 @@ const About: React.FC = () => {
       year: '1964',
       title: 'Roots in Moradabad Begin',
       description: 'Started as a delivery partner with Victory Transport by Late Shri Shiv Dayal Aneja in Moradabad.',
-      // image: 'https://images.pexels.com/photos/29057947/pexels-photo-29057947.jpeg',
       image: anejaTransportLaunced
-      // REPLACE: Add real photo of grandfather with the first truck
     },
     {
       year: '1971',
       title: 'Expansion into Bareilly Market',
       description: 'Established full operations in Bareilly by Late Shri Jaswant Lal Aneja, laying the base for future growth.',
       image: about1965
-      // REPLACE: Family photo from the 1980s showing expansion
     },
     {
       year: '2025',
       title: 'Advancing Through Digital Shift',
       description: 'Aneja Transport enters the digital era with an online presence and modern logistics solutions under third-generation leadership.',
-      // image: 'https://images.pexels.com/photos/29057953/pexels-photo-29057953.jpeg'
       image: anejaDigitalShift
-      // REPLACE: Modern family photo with current leadership
     }
   ];
 
@@ -117,7 +112,6 @@ const About: React.FC = () => {
                     alt="Aneja Transport Legacy"
                     className="w-full h-full object-cover rounded-lg"
                   />
-                  {/* REPLACE: Use actual family photo showing three generations */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-lg"></div>
                 </div>
               </div>
