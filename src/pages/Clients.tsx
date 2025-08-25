@@ -14,62 +14,130 @@ import jswPaints from "../assets/images/jsw-paints.png";
 import metroTyres from "../assets/images/metro-tyres.jpg";
 import shreeRamFertiliers from "../assets/images/Shree-Ram-Fertilizers-&-Chemicals.png";
 import unigold from "../assets/images/unigold.png";
+import { source } from 'framer-motion/client';
+// import { source } from 'framer-motion/client';
 
 const Clients: React.FC = () => {
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      position: 'Logistics Manager',
-      company: 'Apollo Tyres',
+      name: 'Rahul Sports Accessories',
+      position: 'Local Guide',
+      // company: 'Apollo Tyres',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      testimonial: 'Aneja Transport has been our trusted logistics partner for over 5 years. Their reliability and professional service have helped us maintain our supply chain efficiency across multiple cities in India.',
+      testimonial: 'Best for service in Bareilly, i think.',
       rating: 5,
-      location: 'Delhi NCR'
+      source: 'Google',
+      // location: 'Delhi NCR'
     },
     {
-      name: 'Priya Sharma',
-      position: 'Operations Head',
-      company: 'Kansai Narolac Paints',
+      name: 'Deepak Dhasmana',
+      position: 'Local Guide',
+      // company: 'Kansai Narolac Paints',
       image: 'https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      testimonial: 'The third-generation family business brings a personal touch that is rare in today\'s logistics industry. They handle our bulk textile shipments with utmost care and always deliver on time.',
+      testimonial: 'Fast and very prompt delivery.',
       rating: 5,
-      location: 'Mumbai'
+      source: 'Google',
+      // location: 'Mumbai'
     },
     {
-      name: 'Amit Patel',
-      position: 'Business Analyst',
-      company: 'J.k Tyres & Cavendish',
+      name: 'Gani Fitness Vigour',
+      position: ' ',
+      // company: 'J.k Tyres & Cavendish',
       image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      testimonial: 'When I needed to relocate my electronics inventory from Surat to Bangalore, Aneja Transport made it seamless. Their team handled fragile items with expertise and provided real-time tracking throughout.',
+      testimonial: 'Very fast service.',
       rating: 5,
-      location: 'Surat'
+      source: 'Google'
+      // location: 'Surat'
     },
     {
-      name: 'Sunita Agarwal',
-      position: 'Homemaker',
-      company: 'Personal Customer',
+      name: 'Nadir Ali',
+      position: 'Local Guide',
+      // company: 'Personal Customer',
       image: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      testimonial: 'Moving our household from Bareilly to Pune was stressful, but Aneja Transport made it smooth. They took care of everything - packing, loading, transport, and delivery. Truly professional service!',
+      testimonial: 'Good and fast service.',
       rating: 5,
-      location: 'Bareilly'
+      source: 'Google'
+      // location: 'Bareilly'
     },
     {
-      name: 'Vikram Singh',
-      position: 'Supply Chain Director',
-      company: 'JSW Paints',
+      name: 'Shiv Pratap',
+      position: 'Local Guide',
+      // company: 'JSW Paints',
       image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      testimonial: 'Their modern fleet and GPS tracking system gives us complete visibility of our shipments. The customer service team is always responsive and keeps us updated on delivery status.',
+      testimonial: 'Very good behaviour.',
       rating: 5,
-      location: 'Bangalore'
+      source: 'Google'
+      // location: 'Bangalore'
     },
     {
-      name: 'Meera Reddy',
-      position: 'Procurement Manager',
-      company: 'CEAT Tyres',
+      name: 'Vikas Technology Centre',
+      position: 'Local Guide',
+      // company: 'CEAT Tyres',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
-      testimonial: 'What sets Aneja Transport apart is their commitment to customer satisfaction. They go beyond just transport - they provide complete logistics solutions tailored to our business needs.',
+      testimonial: 'Very good service.',
       rating: 5,
-      location: 'Chennai'
+      source: 'Google'
+      // location: 'Chennai'
+    },
+    {
+      name: 'Dr.Rajesh Gangwar (RAJ)',
+      position: '',
+      // company: 'CEAT Tyres',
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      testimonial: 'Very good.',
+      rating: 5,
+      source: 'Google'
+      // location: 'Chennai'
+    },
+    {
+      name: 'Mohd Mohsin',
+      position: 'Local Guide',
+      // company: 'CEAT Tyres',
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      testimonial: 'V good.',
+      rating: 5,
+      source: 'Google'
+      // location: 'Chennai'
+    },
+    {
+      name: 'Saif Khan',
+      position: '',
+      // company: 'CEAT Tyres',
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      testimonial: 'Good Work.',
+      rating: 5,
+      source: 'Google'
+      // location: 'Chennai'
+    },
+    {
+      name: 'Qadri Garments',
+      position: '',
+      // company: 'CEAT Tyres',
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      testimonial: 'Too much useful.',
+      rating: 5,
+      source: 'Google'
+      // location: 'Chennai'
+    },
+    {
+      name: 'G Creative Generation',
+      position: 'Local Guide',
+      // company: 'CEAT Tyres',
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      testimonial: 'Excellent Service.',
+      rating: 5,
+      source: 'Google'
+      // location: 'Chennai'
+    },
+    {
+      name: 'Nupur Agarwal',
+      position: 'Local Guide',
+      // company: 'CEAT Tyres',
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      testimonial: 'My father is in touch for many years and they are good.',
+      rating: 5,
+      source: 'Google'
+      // location: 'Chennai'
     }
   ];
 
@@ -243,7 +311,7 @@ const Clients: React.FC = () => {
                         {testimonial.position}
                       </p>
                       <p className="text-sm text-orange-500 font-medium">
-                        {testimonial.company} • {testimonial.location}
+                        {/*{testimonial.company} •*/} {testimonial.source} Review
                       </p>
                     </div>
                   </div>
@@ -255,7 +323,7 @@ const Clients: React.FC = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      {/* <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -333,7 +401,7 @@ const Clients: React.FC = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-500 to-green-500">
