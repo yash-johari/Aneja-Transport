@@ -14,6 +14,8 @@ import jswPaints from "../assets/images/jsw-paints.png";
 import metroTyres from "../assets/images/metro-tyres.jpg";
 import shreeRamFertiliers from "../assets/images/Shree-Ram-Fertilizers-&-Chemicals.png";
 import unigold from "../assets/images/unigold.png";
+import maleUserIcon from "../assets/images/male user icon.png";
+import femaleUserIcon from "../assets/images/female user icon.png";
 // import { source } from 'framer-motion/client';
 
 
@@ -23,7 +25,7 @@ const Clients: React.FC = () => {
       name: 'Rahul Sports Accessories',
       position: 'Local Guide',
       // company: 'Apollo Tyres',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Best for service in Bareilly, i think.',
       rating: 5,
       source: 'Google',
@@ -33,7 +35,7 @@ const Clients: React.FC = () => {
       name: 'Deepak Dhasmana',
       position: 'Local Guide',
       // company: 'Kansai Narolac Paints',
-      image: 'https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Fast and very prompt delivery.',
       rating: 5,
       source: 'Google',
@@ -43,7 +45,7 @@ const Clients: React.FC = () => {
       name: 'Gani Fitness Vigour',
       position: ' ',
       // company: 'J.k Tyres & Cavendish',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Very fast service.',
       rating: 5,
       source: 'Google'
@@ -53,7 +55,7 @@ const Clients: React.FC = () => {
       name: 'Nadir Ali',
       position: 'Local Guide',
       // company: 'Personal Customer',
-      image: 'https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Good and fast service.',
       rating: 5,
       source: 'Google'
@@ -63,7 +65,7 @@ const Clients: React.FC = () => {
       name: 'Shiv Pratap',
       position: 'Local Guide',
       // company: 'JSW Paints',
-      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Very good behaviour.',
       rating: 5,
       source: 'Google'
@@ -73,7 +75,7 @@ const Clients: React.FC = () => {
       name: 'Vikas Technology Centre',
       position: 'Local Guide',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Very good service.',
       rating: 5,
       source: 'Google'
@@ -83,7 +85,7 @@ const Clients: React.FC = () => {
       name: 'Dr.Rajesh Gangwar (RAJ)',
       position: '',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Very good.',
       rating: 5,
       source: 'Google'
@@ -93,7 +95,7 @@ const Clients: React.FC = () => {
       name: 'Mohd Mohsin',
       position: 'Local Guide',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'V good.',
       rating: 5,
       source: 'Google'
@@ -103,7 +105,7 @@ const Clients: React.FC = () => {
       name: 'Saif Khan',
       position: '',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Good Work.',
       rating: 5,
       source: 'Google'
@@ -113,7 +115,7 @@ const Clients: React.FC = () => {
       name: 'Qadri Garments',
       position: '',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Too much useful.',
       rating: 5,
       source: 'Google'
@@ -123,7 +125,7 @@ const Clients: React.FC = () => {
       name: 'G Creative Generation',
       position: 'Local Guide',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: maleUserIcon,
       testimonial: 'Excellent Service.',
       rating: 5,
       source: 'Google'
@@ -133,7 +135,7 @@ const Clients: React.FC = () => {
       name: 'Nupur Agarwal',
       position: 'Local Guide',
       // company: 'CEAT Tyres',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&dpo=1',
+      image: femaleUserIcon,
       testimonial: 'My father is in touch for many years and they are good.',
       rating: 5,
       source: 'Google'
