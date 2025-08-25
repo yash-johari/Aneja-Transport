@@ -14,8 +14,8 @@ import jswPaints from "../assets/images/jsw-paints.png";
 import metroTyres from "../assets/images/metro-tyres.jpg";
 import shreeRamFertiliers from "../assets/images/Shree-Ram-Fertilizers-&-Chemicals.png";
 import unigold from "../assets/images/unigold.png";
-import { source } from 'framer-motion/client';
 // import { source } from 'framer-motion/client';
+
 
 const Clients: React.FC = () => {
   const testimonials = [
